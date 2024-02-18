@@ -128,6 +128,7 @@ void UsingListboxDlg::Cls_OnCommand(HWND hwnd, int id, HWND hwndCtl, UINT codeNo
 			// скопируем название клуба в выделенную память
 			SendMessage(hList1, LB_GETTEXT, index, LPARAM(pBuffer));
 			GetWindowText(hEdit3, newpBuffer, newlength + 1);
+			SetWindowText(hEdit3, L"");
 			SendMessage(hList1, LB_DELETESTRING, index, 0); // Удаление старого текста
 			SendMessage(hList1, LB_INSERTSTRING, index, (LPARAM)newpBuffer); // Вставка нового текста
 			MessageBox(hwnd, newpBuffer, pBuffer, MB_OK | MB_ICONINFORMATION);
